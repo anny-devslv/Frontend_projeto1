@@ -24,5 +24,88 @@
         width: 100%;
         height: 100%;
         background: linear-gradient(#f00, #f0f);
-        clip-path:circle
+        clip-path:circle(30% at right 70%);
+    }
+
+    body::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(#2196f3, #e91e63);
+        clip-path:circle(20% at 10% 10%);
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 1200px;
+        flex-wrap: wrap;
+        z-index: 1;
+    }
+
+    .container .card {
+        position: relative;
+        width: 280px;
+        height: 400px;
+        margin: 30px;
+        box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+        background: rgba(255, 255, 255, .1);
+        border-top: 1px solid rgba(255, 255, 255, .5);
+        border-left: 1px solid rgba(255, 255, 255, .5);
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(15px);
+    }
+
+    .container .card .content {
+        position: relative;
+        padding: 20px;
+        text-align: center;
+        transition: .5s;
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    .container .card:hover .content {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+
+    .container .card .content span {
+        position: absolute;
+        top: -90px
+        right: 30px;
+        font-size: 8rem;
+        color: rgba(255, 255, 255, .5);
+        pointer-events: none;
+    }
+
+    .content .card .content h3 {
+        font-size: 1.8rem;
+        color: #fff;
+        z-index: 1;
+    }
+
+    .container .card .content p {
+        font-size: 1rem;
+        font-weight: 300;
+        color: #fff;
+        margin: 15px 0;
+    }
+
+    .container .card .content a {
+        display: inline-block;
+        padding: 8px 20px;
+        background: #fff;
+        color: #000;
+        text-decoration: none;
+        border-radius: 20px;
+        font-weight: 500;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
     }
